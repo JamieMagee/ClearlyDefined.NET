@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Update="xunit.v3" Version="3.2.2" />
-    <PackageReference Update="FluentAssertions" Version="6.12.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\ClearlyDefined.Schema\ClearlyDefined.Schema.csproj" />
   </ItemGroup>
 </Project>
