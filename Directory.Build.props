@@ -14,10 +14,10 @@
     <Copyright>Copyright © Jamie Magee. All rights Reserved</Copyright>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/JamieMagee/nuget-package-template</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/JamieMagee/ClearlyDefined.NET</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/JamieMagee/nuget-package-template.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/JamieMagee/ClearlyDefined.NET.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>https://github.com/JamieMagee/nuget-package-template/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/JamieMagee/ClearlyDefined.NET/releases</PackageReleaseNotes>
   </PropertyGroup>
 </Project>
