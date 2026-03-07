@@ -1,4 +1,4 @@
-namespace ClearlyDefined.Schema;
+namespace ClearlyDefined.Client;
 
 /// <summary>
 /// The type of a component in the ClearlyDefined ecosystem.

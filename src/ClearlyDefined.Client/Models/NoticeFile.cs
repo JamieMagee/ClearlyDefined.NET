@@ -1,4 +1,4 @@
-namespace ClearlyDefined.Schema.Models;
+namespace ClearlyDefined.Client.Models;
 
 using System.Text.Json.Serialization;
 

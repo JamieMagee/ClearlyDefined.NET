@@ -1,8 +1,8 @@
 namespace ClearlyDefined.Client.Tests;
 
 using AwesomeAssertions;
-using ClearlyDefined.Schema;
-using ClearlyDefined.Schema.Models;
+using ClearlyDefined.Client;
+using ClearlyDefined.Client.Models;
 
 public sealed class ClearlyDefinedClientTests
 {

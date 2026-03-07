@@ -1,7 +1,7 @@
-namespace ClearlyDefined.Schema;
+namespace ClearlyDefined.Client;
 
 using System.Text.Json;
-using ClearlyDefined.Schema.Models;
+using ClearlyDefined.Client.Models;
 
 /// <summary>
 /// Client interface for the ClearlyDefined API.

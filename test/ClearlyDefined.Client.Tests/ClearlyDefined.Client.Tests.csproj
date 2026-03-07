@@ -5,6 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ClearlyDefined.Schema\ClearlyDefined.Schema.csproj" />
+    <ProjectReference Include="..\..\src\ClearlyDefined.Client\ClearlyDefined.Client.csproj" />
   </ItemGroup>
 </Project>

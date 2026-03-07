@@ -1,4 +1,4 @@
-namespace ClearlyDefined.Schema;
+namespace ClearlyDefined.Client;
 
 using Microsoft.Extensions.DependencyInjection;
 

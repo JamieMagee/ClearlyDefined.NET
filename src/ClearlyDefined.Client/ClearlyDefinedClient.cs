@@ -1,11 +1,11 @@
-namespace ClearlyDefined.Schema;
+namespace ClearlyDefined.Client;
 
 using System.Globalization;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Reflection;
 using System.Text.Json;
-using ClearlyDefined.Schema.Models;
+using ClearlyDefined.Client.Models;
 
 /// <summary>
 /// HTTP client for the ClearlyDefined REST API.

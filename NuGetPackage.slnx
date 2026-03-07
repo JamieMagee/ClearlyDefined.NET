@@ -21,7 +21,7 @@
   </Folder>
   <Folder Name="/src/">
     <File Path="src/Directory.Build.props" />
-    <Project Path="src/ClearlyDefined.Schema/ClearlyDefined.Schema.csproj" />
+    <Project Path="src/ClearlyDefined.Client/ClearlyDefined.Client.csproj" />
   </Folder>
   <Folder Name="/test/">
     <File Path="test/.editorconfig" />

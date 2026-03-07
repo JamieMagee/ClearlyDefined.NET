@@ -1,4 +1,4 @@
-namespace ClearlyDefined.Schema;
+namespace ClearlyDefined.Client;
 
 /// <summary>
 /// The output form of a harvest request.

@@ -1,7 +1,7 @@
 namespace ClearlyDefined.Client.Tests;
 
 using AwesomeAssertions;
-using ClearlyDefined.Schema;
+using ClearlyDefined.Client;
 
 public sealed class EnumExtensionsTests
 {
