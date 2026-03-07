@@ -6,7 +6,7 @@ using ClearlyDefined.Schema.Models;
 /// <summary>
 /// Client interface for the ClearlyDefined API.
 /// </summary>
-public interface IClearlyDefinedClient : IDisposable
+public interface IClearlyDefinedClient
 {
     // Definitions
     public Task<Dictionary<string, Definition>> GetDefinitionsAsync(

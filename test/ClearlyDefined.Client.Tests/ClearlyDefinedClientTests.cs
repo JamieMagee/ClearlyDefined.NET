@@ -2,18 +2,14 @@ namespace ClearlyDefined.Client.Tests;
 
 using ClearlyDefined.Schema;
 
-public sealed class ClearlyDefinedClientTests : IDisposable
+public sealed class ClearlyDefinedClientTests
 {
-    private readonly ClearlyDefinedClient client = new();
-
-    public void Dispose() => this.client.Dispose();
-
     [Fact]
-    public async Task ShouldWorkAsync() =>
-        await this
-            .client.GetDefinitionsAsync(
-                ["npm/npmjs/-/redie/0.3.0"],
-                TestContext.Current.CancellationToken
-            )
+    public async Task ShouldWorkAsync()
+    {
+        var client = new ClearlyDefinedClient();
+        _ = await client
+            .GetDefinitionsAsync(["npm/npmjs/-/redie/0.3.0"], TestContext.Current.CancellationToken)
             .ConfigureAwait(true);
+    }
 }
