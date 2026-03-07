@@ -486,3 +486,10 @@ dotnet_diagnostic.SA1200.severity = none
 # Justification: Documentation missing upstream
 # https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1602.md
 dotnet_diagnostic.SA1602.severity = none
+
+# CSharpier formatting conflicts
+# These StyleCop rules conflict with CSharpier's formatting decisions.
+# https://csharpier.com/docs/IntegratingWithLinters#stylecop
+dotnet_diagnostic.SA1009.severity = none
+dotnet_diagnostic.SA1111.severity = none
+dotnet_diagnostic.SA1502.severity = none

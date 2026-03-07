@@ -1,5 +1,4 @@
 <Project>
-
   <PropertyGroup Label="Build">
     <LangVersion>latest</LangVersion>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
@@ -21,6 +20,4 @@
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>https://github.com/JamieMagee/nuget-package-template/releases</PackageReleaseNotes>
   </PropertyGroup>
-
-
 </Project>

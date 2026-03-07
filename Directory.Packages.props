@@ -1,11 +1,13 @@
 <Project>
-
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <ItemGroup>
-    <GlobalPackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.14.15" />
+    <GlobalPackageReference
+      Include="Microsoft.VisualStudio.Threading.Analyzers"
+      Version="17.14.15"
+    />
     <GlobalPackageReference Include="MinVer" Version="7.0.0" />
     <GlobalPackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556" />
   </ItemGroup>
@@ -17,5 +19,4 @@
     <PackageVersion Include="Restsharp" Version="114.0.0" />
     <PackageVersion Include="xunit.v3" Version="3.2.2" />
   </ItemGroup>
-
 </Project>

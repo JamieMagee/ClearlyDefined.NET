@@ -8,9 +8,7 @@ public sealed class ClearlyDefinedClient : IDisposable
     private readonly RestClient client;
 
     public ClearlyDefinedClient()
-        : this("https://api.clearlydefined.io/")
-    {
-    }
+        : this("https://api.clearlydefined.io/") { }
 
     public ClearlyDefinedClient(string baseUri)
     {
@@ -26,10 +24,15 @@ public sealed class ClearlyDefinedClient : IDisposable
 
     public void Dispose() => this.client.Dispose();
 
-    public async Task QueryDefinitionsAsync(IEnumerable<string> components, CancellationToken cancellationToken = default)
+    public async Task QueryDefinitionsAsync(
+        IEnumerable<string> components,
+        CancellationToken cancellationToken = default
+    )
     {
         var request = new RestRequest("definitions", Method.Post).AddBody(components);
-        var response = await this.client.ExecuteAsync<IDictionary<string, string>>(request, cancellationToken).ConfigureAwait(false);
+        var response = await this
+            .client.ExecuteAsync<IDictionary<string, string>>(request, cancellationToken)
+            .ConfigureAwait(false);
 
         if (!response.IsSuccessful)
         {
