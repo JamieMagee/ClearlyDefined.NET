@@ -11,7 +11,7 @@ public sealed class ClearlyDefinedClientTests : IDisposable
     [Fact]
     public async Task ShouldWorkAsync() =>
         await this
-            .client.QueryDefinitionsAsync(
+            .client.GetDefinitionsAsync(
                 ["npm/npmjs/-/redie/0.3.0"],
                 TestContext.Current.CancellationToken
             )
