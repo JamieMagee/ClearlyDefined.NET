@@ -10,10 +10,5 @@ public sealed class ClearlyDefinedClientTests : IDisposable
 
     [Fact]
     public async Task ShouldWorkAsync() => await this.client.QueryDefinitionsAsync(
-#pragma warning disable CA1861
-        new[]
-        {
-            "npm/npmjs/-/redie/0.3.0",
-        }).ConfigureAwait(false);
-#pragma warning restore CA1861
+        ["npm/npmjs/-/redie/0.3.0"]).ConfigureAwait(false);
 }
