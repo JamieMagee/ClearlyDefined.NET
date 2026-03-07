@@ -66,7 +66,7 @@ public sealed record DefinitionCore
     public DefinitionAttribution? Attribution { get; init; }
 
     [JsonPropertyName("discovered")]
-    public IReadOnlyList<string>? Discovered { get; init; }
+    public JsonElement? Discovered { get; init; }
 }
 
 /// <summary>

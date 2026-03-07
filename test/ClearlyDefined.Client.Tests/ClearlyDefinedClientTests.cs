@@ -72,19 +72,18 @@ public sealed class ClearlyDefinedClientTests
             )
             .ConfigureAwait(true);
 
-        _ = result.Data.Should().NotBeNull();
+        _ = result.Should().NotBeEmpty();
     }
 
     // -- Curations --
 
     [Fact]
-    public async Task GetCurationAsync_ReturnsData()
+    public async Task GetCurationAsync_Returns404ForUncuratedComponent()
     {
-        var result = await this
-            .client.GetCurationAsync(npmRedie, TestContext.Current.CancellationToken)
-            .ConfigureAwait(true);
+        var act = () =>
+            this.client.GetCurationAsync(npmRedie, TestContext.Current.CancellationToken);
 
-        _ = result.ValueKind.Should().NotBe(System.Text.Json.JsonValueKind.Undefined);
+        _ = await act.Should().ThrowAsync<HttpRequestException>().ConfigureAwait(true);
     }
 
     [Fact]

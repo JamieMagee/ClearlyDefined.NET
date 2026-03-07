@@ -83,7 +83,7 @@ public sealed class ClearlyDefinedClient : IClearlyDefinedClient
         )!;
     }
 
-    public async Task<DefinitionSearchResult> SearchDefinitionsAsync(
+    public async Task<IReadOnlyList<string>> SearchDefinitionsAsync(
         DefinitionSearchParameters parameters,
         CancellationToken cancellationToken = default
     )
@@ -91,7 +91,7 @@ public sealed class ClearlyDefinedClient : IClearlyDefinedClient
         var url = "definitions" + BuildSearchQuery(parameters);
         return (
             await this
-                .httpClient.GetFromJsonAsync<DefinitionSearchResult>(url, cancellationToken)
+                .httpClient.GetFromJsonAsync<IReadOnlyList<string>>(url, cancellationToken)
                 .ConfigureAwait(false)
         )!;
     }

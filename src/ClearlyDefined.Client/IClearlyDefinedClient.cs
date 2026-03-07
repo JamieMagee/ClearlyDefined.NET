@@ -20,7 +20,7 @@ public interface IClearlyDefinedClient
         CancellationToken cancellationToken = default
     );
 
-    public Task<DefinitionSearchResult> SearchDefinitionsAsync(
+    public Task<IReadOnlyList<string>> SearchDefinitionsAsync(
         DefinitionSearchParameters parameters,
         CancellationToken cancellationToken = default
     );
