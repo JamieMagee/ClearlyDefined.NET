@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Update="xunit" Version="2.5.0" />
-    <PackageReference Update="FluentAssertions" Version="6.12.0" />
+    <PackageReference Update="FluentAssertions" Version="6.12.2" />
     <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Update="xunit.runner.visualstudio" Version="2.5.0" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
