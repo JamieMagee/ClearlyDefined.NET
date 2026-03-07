@@ -39,6 +39,6 @@ public sealed class ClearlyDefinedClient : IDisposable
             throw new BadImageFormatException("a");
         }
 
-        var data = response.ThrowIfError().Data;
+        _ = response.ThrowIfError().Data;
     }
 }
