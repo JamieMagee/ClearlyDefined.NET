@@ -6,7 +6,7 @@
   <ItemGroup>
     <GlobalPackageReference
       Include="Microsoft.VisualStudio.Threading.Analyzers"
-      Version="17.14.15"
+      Version="18.7.23"
     />
     <GlobalPackageReference Include="MinVer" Version="7.0.0" />
   </ItemGroup>
