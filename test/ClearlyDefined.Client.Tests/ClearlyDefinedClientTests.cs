@@ -162,6 +162,17 @@ public sealed class ClearlyDefinedClientTests : IDisposable
     }
 
     [Fact]
+    public void GetCurationAsync_WithDisposedHttpClient_ThrowsSynchronously()
+    {
+        this.httpClient.Dispose();
+
+        Action act = () =>
+            _ = this.client.GetCurationAsync(npmRedie, TestContext.Current.CancellationToken);
+
+        _ = act.Should().Throw<ObjectDisposedException>();
+    }
+
+    [Fact]
     public async Task GetCurationsBatchAsync_ReturnsBatchData()
     {
         this.SetupResponse(
@@ -240,6 +251,19 @@ public sealed class ClearlyDefinedClientTests : IDisposable
             .ValueKind.Should()
             .Be(JsonValueKind.Object);
         this.VerifyRequest();
+    }
+
+    [Fact]
+    public void GetHarvestAsync_WithInvalidForm_ThrowsSynchronously()
+    {
+        Action act = () =>
+            _ = this.client.GetHarvestAsync(
+                npmRedie,
+                (HarvestForm)int.MaxValue,
+                TestContext.Current.CancellationToken
+            );
+
+        _ = act.Should().Throw<ArgumentOutOfRangeException>();
     }
 
     // -- Notices --
