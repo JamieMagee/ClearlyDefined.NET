@@ -133,30 +133,27 @@ public sealed class ClearlyDefinedClient : IClearlyDefinedClient
 
     // ── Curations ────────────────────────────────────────────────────
 
-    public async Task<JsonElement> GetCurationsListAsync(
+    public Task<JsonElement> GetCurationsListAsync(
         string type,
         string provider,
         string ns,
         string name,
         CancellationToken cancellationToken = default
     ) =>
-        await this.GetJsonAsync($"curations/{type}/{provider}/{ns}/{name}", cancellationToken)
-            .ConfigureAwait(false);
+        this.GetJsonAsync($"curations/{type}/{provider}/{ns}/{name}", cancellationToken);
 
-    public async Task<JsonElement> GetCurationAsync(
+    public Task<JsonElement> GetCurationAsync(
         ComponentCoordinates coordinates,
         CancellationToken cancellationToken = default
     ) =>
-        await this.GetJsonAsync($"curations/{coordinates}", cancellationToken)
-            .ConfigureAwait(false);
+        this.GetJsonAsync($"curations/{coordinates}", cancellationToken);
 
-    public async Task<JsonElement> GetCurationWithPrAsync(
+    public Task<JsonElement> GetCurationWithPrAsync(
         ComponentCoordinates coordinates,
         int pr,
         CancellationToken cancellationToken = default
     ) =>
-        await this.GetJsonAsync($"curations/{coordinates}/pr/{pr}", cancellationToken)
-            .ConfigureAwait(false);
+        this.GetJsonAsync($"curations/{coordinates}/pr/{pr}", cancellationToken);
 
     public async Task<Dictionary<string, JsonElement>> GetCurationsBatchAsync(
         IEnumerable<string> components,
@@ -210,35 +207,32 @@ public sealed class ClearlyDefinedClient : IClearlyDefinedClient
         _ = response.EnsureSuccessStatusCode();
     }
 
-    public async Task<JsonElement> GetHarvestAsync(
+    public Task<JsonElement> GetHarvestAsync(
         ComponentCoordinates coordinates,
         HarvestForm? form = null,
         CancellationToken cancellationToken = default
     ) =>
-        await this.GetJsonAsync($"harvest/{coordinates}{FormQuery(form)}", cancellationToken)
-            .ConfigureAwait(false);
+        this.GetJsonAsync($"harvest/{coordinates}{FormQuery(form)}", cancellationToken);
 
-    public async Task<JsonElement> GetHarvestByToolAsync(
+    public Task<JsonElement> GetHarvestByToolAsync(
         ComponentCoordinates coordinates,
         string tool,
         HarvestForm? form = null,
         CancellationToken cancellationToken = default
     ) =>
-        await this.GetJsonAsync($"harvest/{coordinates}/{tool}{FormQuery(form)}", cancellationToken)
-            .ConfigureAwait(false);
+        this.GetJsonAsync($"harvest/{coordinates}/{tool}{FormQuery(form)}", cancellationToken);
 
-    public async Task<JsonElement> GetHarvestByToolVersionAsync(
+    public Task<JsonElement> GetHarvestByToolVersionAsync(
         ComponentCoordinates coordinates,
         string tool,
         string toolVersion,
         HarvestForm? form = null,
         CancellationToken cancellationToken = default
     ) =>
-        await this.GetJsonAsync(
-                $"harvest/{coordinates}/{tool}/{toolVersion}{FormQuery(form)}",
-                cancellationToken
-            )
-            .ConfigureAwait(false);
+        this.GetJsonAsync(
+            $"harvest/{coordinates}/{tool}/{toolVersion}{FormQuery(form)}",
+            cancellationToken
+        );
 
     public async Task PutHarvestAsync(
         ComponentCoordinates coordinates,
@@ -303,10 +297,8 @@ public sealed class ClearlyDefinedClient : IClearlyDefinedClient
     private static string FormQuery(HarvestForm? form) =>
         form is not null ? $"?form={form.Value.ToApiString()}" : string.Empty;
 
-    private async Task<JsonElement> GetJsonAsync(string url, CancellationToken cancellationToken) =>
-        await this
-            .httpClient.GetFromJsonAsync<JsonElement>(url, cancellationToken)
-            .ConfigureAwait(false);
+    private Task<JsonElement> GetJsonAsync(string url, CancellationToken cancellationToken) =>
+        this.httpClient.GetFromJsonAsync<JsonElement>(url, cancellationToken);
 
     private static string BuildSearchQuery(DefinitionSearchParameters p)
     {
